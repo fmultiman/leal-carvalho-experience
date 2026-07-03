@@ -1,0 +1,22 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d2740"/>
+      <stop offset="100%" stop-color="#04101d"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ecd2a4"/>
+      <stop offset="100%" stop-color="#d9a95f"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5fc6bf" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#9adbd5" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#5fc6bf" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <circle cx="64" cy="50" r="19" fill="url(#sun)"/>
+  <path d="M18 66 Q 41 55 64 66 T 110 66" fill="none" stroke="url(#wave)" stroke-width="4.2" stroke-linecap="round"/>
+  <path d="M14 80 Q 39 68 64 80 T 114 80" fill="none" stroke="url(#wave)" stroke-width="4.6" stroke-linecap="round" opacity=".85"/>
+  <path d="M20 94 Q 42 86 64 94 T 108 94" fill="none" stroke="url(#wave)" stroke-width="4.2" stroke-linecap="round" opacity=".6"/>
+</svg>

@@ -149,6 +149,10 @@
   function setupScenes() {
     if (!HAS_GSAP || REDUCED) return;
     gsap.registerPlugin(ScrollTrigger);
+    // no mobile, o colapso da barra de endereço dispara um "resize" que faz o
+    // ScrollTrigger recalcular no meio de uma seção pinada (o pin "pisca" e
+    // reaparece deslocado); isso evita recalcular por causa desse resize.
+    ScrollTrigger.config({ ignoreMobileResize: true });
 
     /* reveals genéricos */
     document.querySelectorAll(".reveal").forEach((el) => {
@@ -197,6 +201,8 @@
           end: "+=2600",
           pin: true,
           scrub: 0.6,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
         },
       });
       tl.fromTo(".cura__planet-core", { scale: 0.55, opacity: 0.4 }, { scale: 1, opacity: 1, duration: 3 }, 0)
@@ -321,7 +327,14 @@
     runPreloader(() => {
       document.body.classList.add("is-loaded");
       setupScenes();
-      if (HAS_GSAP && !REDUCED) ScrollTrigger.refresh();
+      if (HAS_GSAP && !REDUCED) {
+        ScrollTrigger.refresh();
+        // fontes e imagens que terminam de carregar depois do preloader podem
+        // mudar a altura das seções acima da Cura; um refresh tardio evita que
+        // o pin fique com posição desatualizada.
+        window.addEventListener("load", () => ScrollTrigger.refresh());
+        setTimeout(() => ScrollTrigger.refresh(), 1200);
+      }
     });
   });
 })();
