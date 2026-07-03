@@ -260,6 +260,7 @@ body.no-gsap .cura__line--title { display: block; opacity: 1; }
   letter-spacing: .42em;
   text-transform: uppercase;
   color: var(--turq);
+  margin-bottom: 2.2rem;
 }
 
 .agua__title {

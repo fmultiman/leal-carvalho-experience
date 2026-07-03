@@ -14,7 +14,7 @@ window.LEAL_DISCOS = [
   },
   {
     titulo: "Músicas Devocionais — Ao Vivo",
-    tipo: "álbum ao vivo",
+    tipo: "álbum<br>ao vivo",
     ano: "2019",
     capa: "assets/covers/musicas-devocionais-2019.jpg",
     url: null,
@@ -35,7 +35,7 @@ window.LEAL_DISCOS = [
   },
   {
     titulo: "Água: a Fonte da Vida",
-    tipo: "single · feat. Luís Pavan",
+    tipo: "single<br>feat.<br>Luís Pavan",
     ano: "2024",
     capa: "assets/covers/agua-a-fonte-da-vida-2024.jpg",
     url: null,

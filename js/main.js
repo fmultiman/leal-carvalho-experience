@@ -46,16 +46,28 @@
       }
       const fail = () => win.classList.add("no-video");
       const ok = () => {
+        if (win.classList.contains("has-video")) return;
         win.classList.remove("no-video");
         win.classList.add("has-video");
-        video.play().catch(() => {});
+        video.play().catch(() => {
+          // autoplay bloqueado (raro com muted+playsinline): tenta de novo no primeiro toque
+          const retry = () => { video.play().catch(() => {}); };
+          document.addEventListener("touchstart", retry, { once: true, passive: true });
+          document.addEventListener("click", retry, { once: true });
+        });
       };
-      video.addEventListener("canplay", ok, { once: true });
+      // no mobile, iOS/Android exigem a propriedade JS (não só o atributo) para permitir autoplay
+      video.muted = true;
+      video.playsInline = true;
+      video.addEventListener("loadeddata", ok);
+      video.addEventListener("canplay", ok);
+      video.addEventListener("playing", ok);
       video.addEventListener("error", fail, { once: true });
       const source = video.querySelector("source");
       if (source) source.addEventListener("error", fail, { once: true });
       // enquanto o vídeo não chega (ou não existe), o poster respira
       win.classList.add("no-video");
+      video.load();
     });
   }
 
