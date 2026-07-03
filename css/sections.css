@@ -1,0 +1,871 @@
+/* ═══════════════════════════════════════════════════════════════
+   LEAL CARVALHO — O canto que reúne
+   sections.css · as dez estações da travessia
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ══════════════ 01 · HERO — A FONTE ══════════════ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(90% 70% at 70% 20%, rgba(13, 39, 64, .85) 0%, transparent 60%),
+    linear-gradient(180deg, var(--deep-1) 0%, var(--deep-0) 100%);
+}
+
+.hero__water {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: 46%;
+  opacity: .8;
+}
+
+.hero__glow {
+  position: absolute;
+  top: -20%; right: -10%;
+  width: 60vw; height: 60vw;
+  max-width: 800px; max-height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 169, 95, .1) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+.hero__layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  width: min(var(--container), 92vw);
+  margin: 0 auto;
+  padding-top: 4.5rem;
+}
+
+.hero__kicker {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  color: var(--turq);
+  margin-bottom: 1.6rem;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3.4rem, 10vw, 7.4rem);
+  line-height: .96;
+  letter-spacing: .01em;
+}
+.hero__title-line { display: block; overflow: hidden; }
+.hero__title-line--em { font-style: italic; color: var(--turq-soft); }
+/* palavras animadas via JS */
+.hero__title .word { display: inline-block; }
+
+.hero__manifesto {
+  margin-top: 1.6rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--gold-soft);
+}
+
+.hero__sub {
+  margin-top: 1.1rem;
+  max-width: 30rem;
+  color: var(--linen-dim);
+  font-size: 1.02rem;
+}
+
+.hero .btn { margin-top: 2.4rem; }
+
+.hero__media { justify-self: center; }
+
+/* gota que cai — convite à rolagem */
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+  opacity: .8;
+  transition: opacity .4s;
+}
+.scroll-cue:hover { opacity: 1; }
+.scroll-cue__label {
+  font-size: .62rem;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--linen-faint);
+}
+.scroll-cue__drop {
+  width: 5px; height: 5px;
+  border-radius: 50% 50% 60% 60%;
+  background: var(--turq);
+  animation: drop-fall 2.6s ease-in infinite;
+}
+@keyframes drop-fall {
+  0%   { transform: translateY(0);    opacity: 0; }
+  25%  { opacity: 1; }
+  70%  { transform: translateY(26px); opacity: .9; }
+  82%  { transform: translateY(30px) scaleX(2.6) scaleY(.4); opacity: .4; }
+  100% { transform: translateY(30px) scaleX(3.4) scaleY(.2); opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .hero__layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 6.5rem;
+    padding-bottom: 5.5rem;
+    text-align: center;
+  }
+  .hero__sub { margin-inline: auto; }
+  .hero__media { order: -1; width: min(240px, 62vw); }
+  .scroll-cue { display: none; }
+}
+
+/* ══════════════ 02 · PELA CURA DO PLANETA ══════════════ */
+.cura {
+  position: relative;
+  background: linear-gradient(180deg, var(--deep-0) 0%, #07231f 55%, #0a2b26 100%);
+}
+
+.cura__sky {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 40% at 50% 55%, rgba(95, 198, 191, .10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cura__pin {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.cura__planet {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.cura__planet-core {
+  width: min(46vmin, 420px);
+  height: min(46vmin, 420px);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 30%, rgba(154, 219, 213, .30) 0%, transparent 42%),
+    radial-gradient(circle at 66% 74%, rgba(147, 168, 132, .22) 0%, transparent 48%),
+    radial-gradient(circle, rgba(13, 39, 64, .9) 0%, rgba(7, 26, 44, .95) 100%);
+  box-shadow:
+    inset 0 0 60px rgba(95, 198, 191, .18),
+    0 0 120px rgba(95, 198, 191, .14);
+}
+.cura__planet-ring {
+  position: absolute;
+  width: min(62vmin, 560px);
+  height: min(62vmin, 560px);
+  border-radius: 50%;
+  border: 1px solid rgba(244, 237, 222, .1);
+}
+
+.cura__lines {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 1.4rem;
+  display: grid;
+}
+.cura__line {
+  grid-area: 1 / 1;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.7rem, 4.4vw, 3rem);
+  line-height: 1.3;
+  opacity: 0;
+}
+.cura__line--title {
+  font-size: clamp(3rem, 9vw, 6.4rem);
+  line-height: 1.02;
+  font-weight: 400;
+}
+.cura__line--title em { font-style: italic; color: var(--turq-soft); }
+
+/* fallback sem GSAP / com movimento reduzido: mostra só o título */
+body.reduced-motion .cura__pin { min-height: auto; padding: var(--space-5) 0; }
+body.reduced-motion .cura__line,
+body.no-gsap .cura__line { position: static; opacity: 0; display: none; }
+body.reduced-motion .cura__line--title,
+body.no-gsap .cura__line--title { display: block; opacity: 1; }
+
+.cura__after {
+  position: relative;
+  z-index: 2;
+  width: min(46rem, 90vw);
+  margin: 0 auto;
+  padding: var(--space-4) 0 var(--space-5);
+  text-align: center;
+}
+.cura__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  line-height: 1.5;
+  color: var(--gold-soft);
+}
+.cura__body {
+  margin-top: var(--space-3);
+  color: var(--linen-dim);
+  font-size: 1.05rem;
+}
+
+/* ══════════════ 03 · ÁGUA ══════════════ */
+.agua {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a2b26 0%, var(--deep-2) 40%, var(--deep-1) 100%);
+  padding: var(--space-5) 0;
+}
+
+.agua__waves {
+  position: absolute;
+  inset: 0;
+  opacity: .55;
+}
+
+.agua__content {
+  position: relative;
+  z-index: 2;
+  width: min(var(--container), 92vw);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.agua__kicker {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  color: var(--turq);
+}
+
+.agua__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(4.4rem, 16vw, 12rem);
+  line-height: 1;
+  letter-spacing: .04em;
+  color: var(--turq-soft);
+  filter: url(#liquid);
+  will-change: filter;
+}
+body.reduced-motion .agua__title { filter: none; }
+
+.agua__subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+  color: var(--linen-dim);
+  margin-top: .4rem;
+}
+
+.agua__words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .6rem 2.2rem;
+  margin-top: var(--space-4);
+}
+.agua__words li {
+  font-size: .74rem;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--linen-faint);
+  position: relative;
+}
+.agua__words li:not(:last-child)::after {
+  content: "·";
+  position: absolute;
+  right: -1.35rem;
+  color: var(--turq-dim);
+}
+
+.agua__poem { margin-top: var(--space-4); }
+.agua__poem p {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3.4vw, 2.3rem);
+  line-height: 1.55;
+}
+.agua__poem em { color: var(--turq-soft); }
+
+.agua__single {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: var(--space-5);
+}
+.agua__single img {
+  width: min(300px, 70vw);
+  border-radius: 14px;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, .5), 0 0 70px rgba(95, 198, 191, .12);
+  transition: transform .6s var(--ease-out);
+}
+.agua__single:hover img { transform: translateY(-6px) rotate(-.6deg); }
+.agua__single figcaption { display: grid; gap: .15rem; text-align: center; }
+.agua__single strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.15rem;
+  letter-spacing: .02em;
+}
+.agua__single span {
+  font-size: .7rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--linen-faint);
+}
+
+/* ══════════════ 04 · TRAVESSIA — RIO DO TEMPO ══════════════ */
+.rio {
+  position: relative;
+  background:
+    radial-gradient(80% 50% at 15% 0%, rgba(13, 39, 64, .6) 0%, transparent 60%),
+    var(--deep-1);
+}
+
+.rio__intro {
+  width: min(var(--container), 92vw);
+  margin: 0 auto;
+  padding: var(--space-5) 0 var(--space-4);
+}
+
+.rio__pin { overflow: hidden; }
+
+.rio__track {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(1.4rem, 3vw, 2.6rem);
+  padding: 0 clamp(1.2rem, 4vw, 4rem) var(--space-5);
+  width: max-content;
+}
+
+/* desktop: cards centralizados verticalmente enquanto a seção está pinada */
+@media (min-width: 900px) {
+  .rio__pin { min-height: 100svh; display: flex; align-items: center; }
+  .rio__track { padding-bottom: 0; align-items: center; }
+  .rio-card { min-height: 460px; }
+}
+
+/* mobile: rio corre no dedo (scroll nativo com snap) */
+@media (max-width: 899px) {
+  .rio__pin { overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+  .rio-card { scroll-snap-align: center; }
+}
+
+.rio-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(240px, 30vw, 330px);
+  padding: 1.6rem 1.5rem 1.9rem;
+  border-radius: 18px;
+  background: rgba(244, 237, 222, .035);
+  border: 1px solid rgba(244, 237, 222, .08);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform .6s var(--ease-out), border-color .6s, background .6s;
+}
+.rio-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(95, 198, 191, .35);
+  background: rgba(244, 237, 222, .05);
+}
+
+.rio-card__year {
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--turq);
+}
+
+.rio-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: saturate(.92);
+  transition: filter .5s;
+}
+.rio-card:hover img { filter: saturate(1.05); }
+
+.rio-card h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+.rio-card p { font-size: .92rem; color: var(--linen-dim); }
+.rio-card p em { color: var(--gold-soft); }
+
+.rio-card__pair { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.rio-card__pair img { aspect-ratio: 1; }
+
+.rio-card--premio {
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(160deg, rgba(217, 169, 95, .10), rgba(217, 169, 95, .03));
+  border-color: rgba(217, 169, 95, .3);
+}
+.rio-card--premio:hover { border-color: rgba(217, 169, 95, .55); }
+.rio-card--premio h3 { color: var(--gold-soft); font-size: 1.25rem; }
+.rio-card__laurel { font-size: 2rem; color: var(--gold); }
+
+.rio-card--fim {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  border-color: transparent;
+}
+.rio-card__frase {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--turq-soft);
+}
+
+/* linha d'água sob o rio */
+.rio__pin::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 clamp(1.2rem, 4vw, 4rem);
+  background: linear-gradient(90deg, transparent, var(--turq-dim), transparent);
+}
+
+/* ══════════════ 05 · REENCONTRO ══════════════ */
+.reencontro {
+  position: relative;
+  background:
+    radial-gradient(70% 60% at 80% 20%, rgba(122, 104, 184, .12) 0%, transparent 60%),
+    linear-gradient(180deg, var(--deep-1) 0%, var(--violet-deep) 100%);
+  padding: var(--space-5) 0;
+}
+
+.reencontro__inner {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+  width: min(var(--container), 92vw);
+  margin: 0 auto;
+}
+
+.reencontro__figure {
+  position: relative;
+  border-radius: 165px 165px 18px 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .55);
+}
+.reencontro__figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(18, 14, 38, .12), transparent 40%, rgba(18, 14, 38, .5));
+  mix-blend-mode: multiply;
+}
+.reencontro__figure img {
+  width: 100%;
+  filter: saturate(.8) contrast(1.02);
+}
+
+.reencontro__poem { margin-top: var(--space-3); }
+.reencontro__poem p {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  line-height: 1.5;
+  color: var(--linen);
+}
+.reencontro__poem em { color: var(--violet); font-size: 1.06em; }
+
+.reencontro__body {
+  margin-top: var(--space-3);
+  max-width: 30rem;
+  color: var(--linen-dim);
+}
+
+.section-title--serif { font-weight: 300; font-style: italic; }
+
+@media (max-width: 900px) {
+  .reencontro__inner { grid-template-columns: 1fr; }
+  .reencontro__figure { width: min(320px, 80vw); margin: 0 auto; }
+}
+
+/* ══════════════ 06 · O CÍRCULO ══════════════ */
+.circulo {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(80% 60% at 50% 100%, rgba(138, 106, 79, .16) 0%, transparent 55%),
+    linear-gradient(180deg, var(--violet-deep) 0%, #1a1210 60%, #201410 100%);
+  padding: var(--space-5) 0;
+  text-align: center;
+}
+
+.circulo__particles {
+  position: absolute;
+  inset: 0;
+  opacity: .9;
+}
+
+.circulo__head { position: relative; z-index: 2; }
+
+.circulo__stage {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  margin-top: var(--space-4);
+  min-height: 560px;
+}
+
+.circulo__media { grid-area: 1 / 1; }
+
+/* fotos-satélite — outras vozes chegando à roda */
+.circulo__sat {
+  grid-area: 1 / 1;
+  position: relative;
+  width: clamp(110px, 14vw, 190px);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(244, 237, 222, .12);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .5);
+  filter: saturate(.85) brightness(.9);
+  opacity: 0;
+}
+.circulo__sat--1 { transform: translate(-26vw, -8rem) rotate(-5deg); }
+.circulo__sat--2 { transform: translate(26vw, -6rem) rotate(4deg); }
+.circulo__sat--3 { transform: translate(-24vw, 9rem) rotate(3deg); }
+.circulo__sat--4 { transform: translate(25vw, 10rem) rotate(-4deg); }
+
+body.reduced-motion .circulo__sat,
+body.no-gsap .circulo__sat { opacity: .9; }
+
+@media (max-width: 900px) {
+  .circulo__stage { min-height: auto; }
+  .circulo__sat { display: none; }
+}
+
+.circulo__lines {
+  position: relative;
+  z-index: 2;
+  margin-top: var(--space-4);
+}
+.circulo__lines p {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3.4vw, 2.3rem);
+  line-height: 1.55;
+}
+.circulo__lines em { color: var(--gold-soft); }
+
+.circulo__body {
+  position: relative;
+  z-index: 2;
+  width: min(34rem, 88vw);
+  margin: var(--space-3) auto 0;
+  color: var(--linen-dim);
+}
+
+/* ══════════════ 07 · RAIO CÓSMICO ══════════════ */
+.raio {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(70% 50% at 50% 0%, rgba(122, 104, 184, .16) 0%, transparent 55%),
+    linear-gradient(180deg, #201410 0%, var(--violet-deep) 26%, #090818 100%);
+  padding: var(--space-5) 0;
+  text-align: center;
+}
+
+.raio__stars { position: absolute; inset: 0; }
+
+.raio__aurora {
+  position: absolute;
+  top: 10%; left: 50%;
+  width: 130vw; height: 60%;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(46% 34% at 44% 42%, rgba(122, 104, 184, .17) 0%, transparent 70%),
+    radial-gradient(40% 30% at 60% 55%, rgba(95, 198, 191, .10) 0%, transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+  animation: aurora-drift 24s ease-in-out infinite alternate;
+}
+@keyframes aurora-drift {
+  from { transform: translateX(-54%) scale(1); }
+  to   { transform: translateX(-46%) scale(1.08); }
+}
+
+.raio__content {
+  position: relative;
+  z-index: 2;
+  width: min(var(--container), 92vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.raio__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(3.2rem, 9vw, 6.6rem);
+  line-height: .98;
+  margin-top: var(--space-2);
+  background: linear-gradient(120deg, var(--linen) 20%, var(--violet) 55%, var(--turq-soft) 85%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          color: transparent;
+}
+.raio__title em { font-style: italic; }
+
+.raio__media { margin-top: var(--space-4); }
+.raio__media .media-window__frame {
+  border-radius: 50% 50% 24px 24px / 38% 38% 24px 24px;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, .6),
+    0 0 0 1px rgba(244, 237, 222, .1),
+    0 0 110px rgba(122, 104, 184, .25);
+}
+
+.raio__poem { margin-top: var(--space-4); }
+.raio__poem p {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.6rem, 3.6vw, 2.5rem);
+  line-height: 1.5;
+}
+.raio__poem em { color: var(--gold-soft); }
+
+.raio__body {
+  width: min(32rem, 88vw);
+  margin: var(--space-3) auto 0;
+  color: var(--linen-dim);
+}
+
+/* ══════════════ 08 · DISCOGRAFIA ══════════════ */
+.discos {
+  position: relative;
+  background: linear-gradient(180deg, #090818 0%, var(--deep-0) 30%);
+  padding: var(--space-5) 0;
+}
+
+.discos__head {
+  width: min(var(--container), 92vw);
+  margin: 0 auto var(--space-4);
+}
+
+.discos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+  width: min(var(--container), 92vw);
+  margin: 0 auto;
+}
+@media (max-width: 900px) { .discos__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .discos__grid { grid-template-columns: 1fr; width: min(24rem, 92vw); } }
+
+.disco {
+  position: relative;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(244, 237, 222, .03);
+  border: 1px solid rgba(244, 237, 222, .08);
+  transition: transform .55s var(--ease-out), border-color .55s, box-shadow .55s;
+}
+.disco:hover {
+  transform: translateY(-9px);
+  border-color: rgba(95, 198, 191, .4);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .5);
+}
+
+.disco__cover { position: relative; overflow: hidden; }
+.disco__cover img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform 1s var(--ease-out);
+}
+.disco:hover .disco__cover img { transform: scale(1.05); }
+
+/* brilho líquido que atravessa a capa */
+.disco__cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 32%, rgba(244, 237, 222, .16) 48%, transparent 62%);
+  transform: translateX(-120%);
+  transition: transform 1s var(--ease-out);
+  pointer-events: none;
+}
+.disco:hover .disco__cover::after { transform: translateX(120%); }
+
+.disco__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.2rem 1.25rem;
+}
+.disco__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.18rem;
+  line-height: 1.25;
+}
+.disco__info {
+  flex-shrink: 0;
+  font-size: .66rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--linen-faint);
+  text-align: right;
+}
+.disco__info strong { display: block; color: var(--turq); font-weight: 600; }
+
+.discos__note {
+  margin-top: var(--space-4);
+  text-align: center;
+  font-size: .72rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--linen-faint);
+}
+
+/* ══════════════ 09 · PRÓXIMOS ENCONTROS ══════════════ */
+.encontros {
+  background: var(--deep-0);
+  padding: var(--space-5) 0;
+}
+
+.encontros__inner {
+  width: min(var(--container), 92vw);
+  margin: 0 auto;
+}
+
+.encontros__list {
+  margin-top: var(--space-4);
+  border-top: 1px solid rgba(244, 237, 222, .1);
+}
+
+.encontros__item {
+  display: grid;
+  grid-template-columns: 9rem 1fr auto;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.7rem .4rem;
+  border-bottom: 1px solid rgba(244, 237, 222, .1);
+  transition: background .4s, padding-left .4s;
+}
+.encontros__item:hover { background: rgba(244, 237, 222, .025); padding-left: 1rem; }
+
+.encontros__data {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.encontros__item h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.encontros__item p { font-size: .85rem; color: var(--linen-faint); }
+.encontros__tag {
+  font-size: .64rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--turq);
+  border: 1px solid var(--turq-dim);
+  border-radius: 999px;
+  padding: .45rem 1.1rem;
+}
+
+.encontros .btn { margin-top: var(--space-4); }
+
+@media (max-width: 700px) {
+  .encontros__item { grid-template-columns: 1fr; gap: .6rem; }
+  .encontros__tag { justify-self: start; }
+}
+
+/* ══════════════ 10 · ENCERRAMENTO ══════════════ */
+.fim {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(80% 60% at 50% 100%, var(--deep-2) 0%, transparent 60%),
+    var(--deep-0);
+}
+
+.fim__water {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: 52%;
+  opacity: .85;
+}
+
+.fim__content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-5) 1.4rem var(--space-4);
+}
+
+.fim__linha {
+  font-size: .74rem;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--turq);
+}
+
+.fim__frase {
+  margin-top: var(--space-3);
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3rem, 9vw, 6.4rem);
+  line-height: 1.05;
+}
+.fim__frase em { font-style: italic; color: var(--turq-soft); }
+
+.fim .btn { margin-top: var(--space-4); }

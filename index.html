@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leal Carvalho — O canto que reúne</title>
+  <meta name="description" content="Uma vida dedicada a cantar pela paz, pela água e pela cura do planeta. Uma travessia imersiva pela obra de Leal Carvalho.">
+  <meta property="og:title" content="Leal Carvalho — O canto que reúne">
+  <meta property="og:description" content="Uma vida dedicada a cantar pela paz, pela água e pela cura do planeta.">
+  <meta property="og:image" content="assets/img/leal-fonte.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+  <!-- ══════════════ PRELOADER · entrada poética ══════════════ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <p class="preloader__line" data-pre="1">Antes da palavra,</p>
+      <p class="preloader__line preloader__line--em" data-pre="2">existe o canto.</p>
+      <div class="preloader__water"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <!-- ══════════════ NAVEGAÇÃO ══════════════ -->
+  <header class="topbar" id="topbar">
+    <a class="topbar__brand" href="#fonte">Leal <em>Carvalho</em></a>
+    <nav class="topbar__nav" aria-label="Navegação principal">
+      <a href="#cura">Cura</a>
+      <a href="#rio">Travessia</a>
+      <a href="#circulo">O Círculo</a>
+      <a href="#raio">Raio Cósmico</a>
+      <a href="#discografia">Discografia</a>
+      <a href="#encontros">Encontros</a>
+    </nav>
+    <button class="topbar__menu" id="menu-open" aria-label="Abrir menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+    <button class="menu-overlay__close" id="menu-close" aria-label="Fechar menu">×</button>
+    <nav class="menu-overlay__nav" aria-label="Menu completo">
+      <a href="#fonte"><small>01</small>A Fonte</a>
+      <a href="#cura"><small>02</small>Pela Cura do Planeta</a>
+      <a href="#agua"><small>03</small>Água</a>
+      <a href="#rio"><small>04</small>Travessia</a>
+      <a href="#reencontro"><small>05</small>Reencontro</a>
+      <a href="#circulo"><small>06</small>O Círculo</a>
+      <a href="#raio"><small>07</small>Raio Cósmico</a>
+      <a href="#discografia"><small>08</small>Discografia</a>
+      <a href="#encontros"><small>09</small>Próximos Encontros</a>
+    </nav>
+    <p class="menu-overlay__foot">O canto que reúne</p>
+  </div>
+
+  <main id="experiencia">
+
+    <!-- ══════════════ 01 · HERO — A FONTE (Vídeo 1) ══════════════ -->
+    <section class="hero" id="fonte" data-nav="A Fonte">
+      <canvas class="hero__water" id="water-hero" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="hero__layout">
+        <div class="hero__text">
+          <p class="hero__kicker reveal">Uma travessia em canto, água e reencontro</p>
+          <h1 class="hero__title">
+            <span class="hero__title-line">Leal</span>
+            <span class="hero__title-line hero__title-line--em">Carvalho</span>
+          </h1>
+          <p class="hero__manifesto reveal">O canto que reúne.</p>
+          <p class="hero__sub reveal">Uma vida dedicada a cantar pela paz,<br>pela água e pela cura do planeta.</p>
+          <a class="btn btn--ghost reveal" href="#cura">Entrar na travessia</a>
+        </div>
+
+        <!-- Janela viva · VÍDEO 1 — A FONTE (portrait, com extensão atmosférica em código) -->
+        <figure class="media-window hero__media" data-media="fonte">
+          <div class="media-window__frame">
+            <img class="media-window__poster" src="assets/img/leal-fonte.webp"
+                 alt="Leal Carvalho contemplando o horizonte com seu violão, luz da manhã">
+            <video class="media-window__video" playsinline muted loop autoplay preload="metadata"
+                   poster="assets/img/leal-fonte.webp">
+              <source src="assets/video/fonte.mp4" type="video/mp4">
+            </video>
+            <div class="media-window__veil" aria-hidden="true"></div>
+          </div>
+          <div class="media-window__reflection" aria-hidden="true"></div>
+          <figcaption class="media-window__caption">a fonte · a escuta · o começo</figcaption>
+        </figure>
+      </div>
+
+      <a class="scroll-cue" href="#cura" aria-label="Rolar para a próxima seção">
+        <span class="scroll-cue__label">desça devagar</span>
+        <span class="scroll-cue__drop" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ══════════════ 02 · PELA CURA DO PLANETA ══════════════ -->
+    <section class="cura" id="cura" data-nav="Cura">
+      <div class="cura__sky" aria-hidden="true"></div>
+      <div class="cura__pin">
+        <div class="cura__planet" aria-hidden="true">
+          <span class="cura__planet-core"></span>
+          <span class="cura__planet-ring"></span>
+        </div>
+        <div class="cura__lines">
+          <p class="cura__line" data-step="1">Há canções que não se cantam sozinho.</p>
+          <p class="cura__line" data-step="2">Há canções que são rezo, são roda, são rio.</p>
+          <p class="cura__line cura__line--title" data-step="3">Pela Cura<br><em>do Planeta</em></p>
+        </div>
+      </div>
+      <div class="cura__after">
+        <p class="cura__quote reveal">“Pela Cura do Planeta” e “Força da Paz” tornaram-se cantos
+          coletivos — entoados por comunidades e buscadores em diferentes lugares.</p>
+        <p class="cura__body reveal">Na obra de Leal, água, natureza, espírito e humanidade não aparecem
+          como elementos separados, mas como partes de uma mesma existência.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════ 03 · ÁGUA — A FONTE DA VIDA ══════════════ -->
+    <section class="agua" id="agua" data-nav="Água">
+      <canvas class="agua__waves" id="water-agua" aria-hidden="true"></canvas>
+      <div class="agua__content">
+        <p class="agua__kicker reveal">o fio que atravessa tudo</p>
+        <h2 class="agua__title" id="agua-title">Água</h2>
+        <p class="agua__subtitle reveal"><em>a fonte da vida</em></p>
+
+        <ul class="agua__words" aria-label="Símbolos da água">
+          <li>reflexo</li><li>fluxo</li><li>memória</li><li>purificação</li><li>origem</li>
+        </ul>
+
+        <div class="agua__poem">
+          <p class="reveal">A água guarda memória.</p>
+          <p class="reveal">O canto também.</p>
+          <p class="reveal"><em>Os dois correm para o mesmo mar.</em></p>
+        </div>
+
+        <figure class="agua__single reveal">
+          <img src="assets/covers/agua-a-fonte-da-vida-2024.jpg" alt="Capa do single Água: a Fonte da Vida (2024)">
+          <figcaption>
+            <strong>Água: a Fonte da Vida</strong>
+            <span>single · 2024 · feat. Luís Pavan</span>
+          </figcaption>
+        </figure>
+      </div>
+      <svg class="svg-defs" aria-hidden="true">
+        <filter id="liquid">
+          <feTurbulence id="liquid-turb" type="fractalNoise" baseFrequency="0.012 0.04" numOctaves="2" result="noise"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+      </svg>
+    </section>
+
+    <!-- ══════════════ 04 · TRAVESSIA — O RIO DO TEMPO ══════════════ -->
+    <section class="rio" id="rio" data-nav="Travessia">
+      <div class="rio__intro">
+        <p class="section-kicker reveal">memória viva</p>
+        <h2 class="section-title reveal">Travessia</h2>
+        <p class="section-lead reveal">Não é uma biografia. É um rio: nasce no Rio de Janeiro,
+          cresce em Brasília e segue correndo — por rodas, celebrações e gerações.</p>
+      </div>
+
+      <div class="rio__pin">
+        <div class="rio__track" id="rio-track">
+
+          <article class="rio-card">
+            <span class="rio-card__year">origem</span>
+            <img src="assets/img/leal-agradecido.jpg" alt="Leal Carvalho com a mão no peito, em gratidão" loading="lazy">
+            <h3>Filho da música</h3>
+            <p>Nasceu no Rio de Janeiro, cresceu em Brasília. Filho de músicos, encontrou na canção
+              um caminho de encontro, consciência e transformação.</p>
+          </article>
+
+          <article class="rio-card">
+            <span class="rio-card__year">Udiyana Bandha</span>
+            <img src="assets/img/leal-udiyana.jpg" alt="Leal cantando ao microfone com violão, na Udiyana Bandha" loading="lazy">
+            <h3>A música devocional</h3>
+            <p>Integrou a Udiyana Bandha, grupo pioneiro da música devocional no Brasil — e tornou-se
+              uma das vozes mais reconhecidas da música de rezo e da Cultura de Paz.</p>
+          </article>
+
+          <article class="rio-card rio-card--cover">
+            <span class="rio-card__year">2008</span>
+            <img src="assets/covers/pela-cura-do-planeta-2008.jpg" alt="Capa do álbum Pela Cura do Planeta (2008)" loading="lazy">
+            <h3>Pela Cura do Planeta</h3>
+            <p>A canção que virou canto coletivo — e deu nome a uma causa.</p>
+          </article>
+
+          <article class="rio-card rio-card--cover">
+            <span class="rio-card__year">2019</span>
+            <img src="assets/covers/musicas-devocionais-2019.jpg" alt="Capa do álbum Músicas Devocionais ao vivo (2019)" loading="lazy">
+            <h3>Músicas Devocionais</h3>
+            <p>Registro ao vivo: a roda respirando junto, em tempo real.</p>
+          </article>
+
+          <article class="rio-card rio-card--dupla">
+            <span class="rio-card__year">2021</span>
+            <div class="rio-card__pair">
+              <img src="assets/covers/reencontro-presente-infinito-eterno-2021.jpg" alt="Capa de Reencontro: Presente, Infinito, Eterno (2021)" loading="lazy">
+              <img src="assets/covers/reencontro-musicas-de-rezo-2021.jpg" alt="Capa de Reencontro: Músicas de Rezo e Medicina (2021)" loading="lazy">
+            </div>
+            <h3>Reencontro, em dois tempos</h3>
+            <p><em>Presente, Infinito, Eterno</em> e <em>Músicas de Rezo e Medicina</em> —
+              o rezo como caminho de volta.</p>
+          </article>
+
+          <article class="rio-card rio-card--premio">
+            <span class="rio-card__year">2022</span>
+            <div class="rio-card__laurel" aria-hidden="true">✦</div>
+            <h3>Prêmio Internacional Ibero&#8209;americano de Arte e Cultura pela Paz</h3>
+            <p>Reconhecimento de uma caminhada dedicada à música, à união entre os povos
+              e a uma consciência mais amorosa para o planeta.</p>
+          </article>
+
+          <article class="rio-card rio-card--cover">
+            <span class="rio-card__year">2024</span>
+            <img src="assets/covers/agua-a-fonte-da-vida-2024.jpg" alt="Capa do single Água: a Fonte da Vida (2024)" loading="lazy">
+            <h3>Água: a Fonte da Vida</h3>
+            <p>A água como canção — reflexo, fluxo e memória.</p>
+          </article>
+
+          <article class="rio-card rio-card--cover">
+            <span class="rio-card__year">2025</span>
+            <img src="assets/covers/raio-cosmico-2025.jpg" alt="Capa do álbum Raio Cósmico (2025)" loading="lazy">
+            <h3>Raio Cósmico</h3>
+            <p>O canto se abre para o céu — sem soltar a mão da roda.</p>
+          </article>
+
+          <article class="rio-card rio-card--fim">
+            <p class="rio-card__frase"><em>O rio segue.</em></p>
+            <a class="btn btn--ghost" href="#reencontro">Continuar</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 05 · REENCONTRO ══════════════ -->
+    <section class="reencontro" id="reencontro" data-nav="Reencontro">
+      <div class="reencontro__inner">
+        <figure class="reencontro__figure reveal">
+          <img src="assets/img/leal-prece-lado.jpg" alt="Leal Carvalho de perfil, mãos em prece, céu ao fundo" loading="lazy">
+        </figure>
+        <div class="reencontro__text">
+          <p class="section-kicker reveal">canções de rezo e medicina</p>
+          <h2 class="section-title section-title--serif reveal">Reencontro</h2>
+          <div class="reencontro__poem">
+            <p class="reveal">com o espírito,</p>
+            <p class="reveal">com a paz,</p>
+            <p class="reveal">com a natureza,</p>
+            <p class="reveal">com a comunidade,</p>
+            <p class="reveal"><em>com a própria essência.</em></p>
+          </div>
+          <p class="reencontro__body reveal">Mais do que cantar para um público, Leal abre espaços de
+            presença. Sua música convida cada pessoa a escutar, lembrar e participar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 06 · O CÍRCULO (Vídeo 2) ══════════════ -->
+    <section class="circulo" id="circulo" data-nav="O Círculo">
+      <canvas class="circulo__particles" id="particles-circulo" aria-hidden="true"></canvas>
+      <div class="circulo__head">
+        <p class="section-kicker reveal">a música como campo coletivo</p>
+        <h2 class="section-title reveal">O Círculo</h2>
+      </div>
+
+      <div class="circulo__stage">
+        <!-- fotos-satélite: outras vozes chegando -->
+        <img class="circulo__sat circulo__sat--1" src="assets/img/leal-cantando-amigos.webp" alt="" aria-hidden="true" loading="lazy">
+        <img class="circulo__sat circulo__sat--2" src="assets/img/leal-amigos-noite.webp" alt="" aria-hidden="true" loading="lazy">
+        <img class="circulo__sat circulo__sat--3" src="assets/img/leal-festa.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="circulo__sat circulo__sat--4" src="assets/img/leal-familia.webp" alt="" aria-hidden="true" loading="lazy">
+
+        <!-- Janela viva · VÍDEO 2 — O CÍRCULO -->
+        <figure class="media-window circulo__media" data-media="circulo">
+          <div class="media-window__frame">
+            <img class="media-window__poster" src="assets/img/leal-circulo.jpg"
+                 alt="Leal Carvalho sorrindo ao centro de uma roda de músicos e amigos">
+            <video class="media-window__video" playsinline muted loop autoplay preload="metadata"
+                   poster="assets/img/leal-circulo.jpg">
+              <source src="assets/video/circulo.mp4" type="video/mp4">
+            </video>
+            <div class="media-window__veil" aria-hidden="true"></div>
+          </div>
+          <div class="media-window__reflection" aria-hidden="true"></div>
+          <figcaption class="media-window__caption">a roda · o coro · a partilha</figcaption>
+        </figure>
+      </div>
+
+      <div class="circulo__lines">
+        <p class="reveal">Começa com uma voz.</p>
+        <p class="reveal">Depois, outra. E mais outra.</p>
+        <p class="reveal"><em>Quando a gente percebe, é coro. É roda. É reza.</em></p>
+      </div>
+      <p class="circulo__body reveal">A voz individual vira coro, a canção vira oração,
+        e o encontro vira possibilidade de cura.</p>
+    </section>
+
+    <!-- ══════════════ 07 · RAIO CÓSMICO (Vídeo 3) ══════════════ -->
+    <section class="raio" id="raio" data-nav="Raio Cósmico">
+      <canvas class="raio__stars" id="stars-raio" aria-hidden="true"></canvas>
+      <div class="raio__aurora" aria-hidden="true"></div>
+
+      <div class="raio__content">
+        <p class="section-kicker section-kicker--gold reveal">2025 · Anawhaki</p>
+        <h2 class="raio__title reveal">Raio<br><em>Cósmico</em></h2>
+
+        <!-- Janela viva · VÍDEO 3 — O RAIO -->
+        <figure class="media-window raio__media" data-media="raio">
+          <div class="media-window__frame">
+            <img class="media-window__poster" src="assets/img/leal-raio.jpg"
+                 alt="Leal Carvalho sentado com o violão, mãos em prece, olhando para o alto entre as árvores">
+            <video class="media-window__video" playsinline muted loop autoplay preload="metadata"
+                   poster="assets/img/leal-raio.jpg">
+              <source src="assets/video/raio.mp4" type="video/mp4">
+            </video>
+            <div class="media-window__veil" aria-hidden="true"></div>
+          </div>
+          <div class="media-window__reflection" aria-hidden="true"></div>
+          <figcaption class="media-window__caption">o céu · o silêncio · a expansão</figcaption>
+        </figure>
+
+        <div class="raio__poem">
+          <p class="reveal">Todo ser é uma estrela.</p>
+          <p class="reveal"><em>Acenda a luz que é você.</em></p>
+        </div>
+        <p class="raio__body reveal">No trabalho mais recente, o canto se abre para o cosmos —
+          sem deixar o chão, a roda, o humano.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════ 08 · DISCOGRAFIA ══════════════ -->
+    <section class="discos" id="discografia" data-nav="Discografia">
+      <div class="discos__head">
+        <p class="section-kicker reveal">obra</p>
+        <h2 class="section-title reveal">Discografia</h2>
+        <p class="section-lead reveal">Cada disco é uma roda que ficou gravada.</p>
+      </div>
+      <div class="discos__grid" id="discos-grid">
+        <!-- preenchido por js/data.js -->
+      </div>
+      <p class="discos__note reveal">players e links para streaming em breve</p>
+    </section>
+
+    <!-- ══════════════ 09 · PRÓXIMOS ENCONTROS ══════════════ -->
+    <section class="encontros" id="encontros" data-nav="Encontros">
+      <div class="encontros__inner">
+        <p class="section-kicker reveal">agenda</p>
+        <h2 class="section-title reveal">Próximos encontros</h2>
+        <p class="section-lead reveal">Rodas, cerimônias e vivências — a música ao vivo,
+          onde ela nasce: no encontro.</p>
+
+        <ul class="encontros__list">
+          <li class="encontros__item reveal">
+            <span class="encontros__data">em breve</span>
+            <div>
+              <h3>Roda de canto e rezo</h3>
+              <p>local a confirmar</p>
+            </div>
+            <span class="encontros__tag">vivência</span>
+          </li>
+          <li class="encontros__item reveal">
+            <span class="encontros__data">em breve</span>
+            <div>
+              <h3>Cerimônia pela Cura do Planeta</h3>
+              <p>local a confirmar</p>
+            </div>
+            <span class="encontros__tag">cerimônia</span>
+          </li>
+          <li class="encontros__item reveal">
+            <span class="encontros__data">em breve</span>
+            <div>
+              <h3>Concerto devocional</h3>
+              <p>local a confirmar</p>
+            </div>
+            <span class="encontros__tag">concerto</span>
+          </li>
+        </ul>
+
+        <a class="btn btn--solid reveal" href="mailto:contato@lealcarvalho.com.br?subject=Quero%20ser%20avisado%20dos%20encontros">
+          Quero ser avisado
+        </a>
+      </div>
+    </section>
+
+    <!-- ══════════════ 10 · ENCERRAMENTO ══════════════ -->
+    <section class="fim" id="fim" data-nav="Fim">
+      <canvas class="fim__water" id="water-fim" aria-hidden="true"></canvas>
+      <div class="fim__content">
+        <p class="fim__linha reveal">A água volta sempre à fonte.</p>
+        <p class="fim__frase reveal">Que o canto<br><em>nos reúna.</em></p>
+        <a class="btn btn--ghost reveal" href="#fonte" id="voltar-fonte">Voltar à fonte</a>
+      </div>
+      <footer class="footer">
+        <p class="footer__brand">Leal <em>Carvalho</em></p>
+        <nav class="footer__social" aria-label="Redes sociais">
+          <a href="#" aria-disabled="true">Instagram</a>
+          <a href="#" aria-disabled="true">YouTube</a>
+          <a href="#" aria-disabled="true">Spotify</a>
+        </nav>
+        <p class="footer__note">protótipo experiencial · o canto que reúne</p>
+      </footer>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
