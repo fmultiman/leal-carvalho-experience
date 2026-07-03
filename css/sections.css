@@ -85,6 +85,7 @@
 .hero .btn { margin-top: 2.4rem; }
 
 .hero__media { justify-self: center; }
+.hero__media::before { inset: -22%; opacity: 1; }
 
 /* gota que cai — convite à rolagem */
 .scroll-cue {
@@ -547,7 +548,7 @@ body.reduced-motion .agua__title { filter: none; }
   min-height: 560px;
 }
 
-.circulo__media { grid-area: 1 / 1; }
+.circulo__media { grid-area: 1 / 1; --window-glow: rgba(217, 169, 95, .3); }
 
 /* fotos-satélite — outras vozes chegando à roda */
 .circulo__sat {
@@ -650,13 +651,12 @@ body.no-gsap .circulo__sat { opacity: .9; }
 }
 .raio__title em { font-style: italic; }
 
-.raio__media { margin-top: var(--space-4); }
+.raio__media { margin-top: var(--space-4); --window-glow: rgba(122, 104, 184, .34); }
 .raio__media .media-window__frame {
   border-radius: 50% 50% 24px 24px / 38% 38% 24px 24px;
   box-shadow:
-    0 30px 80px rgba(0, 0, 0, .6),
-    0 0 0 1px rgba(244, 237, 222, .1),
-    0 0 110px rgba(122, 104, 184, .25);
+    0 30px 70px rgba(0, 0, 0, .45),
+    0 0 70px var(--window-glow);
 }
 
 .raio__poem { margin-top: var(--space-4); }

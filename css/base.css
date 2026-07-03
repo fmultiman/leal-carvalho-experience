@@ -298,10 +298,23 @@ body.is-loaded .topbar { opacity: 1; transform: none; }
   color: var(--linen-faint);
 }
 
-/* ── janela viva (vídeo portrait + moldura atmosférica) ──────── */
+/* ── janela viva (vídeo portrait + presença atmosférica) ───────── */
 .media-window {
   position: relative;
   width: min(340px, 78vw);
+  isolation: isolate;
+  --window-glow: rgba(95, 198, 191, .3);
+}
+
+/* halo que acompanha a forma da janela e a dissolve no ambiente */
+.media-window::before {
+  content: "";
+  position: absolute;
+  inset: -14%;
+  border-radius: 44% 44% 34% 34%;
+  background: radial-gradient(closest-side, var(--window-glow) 0%, transparent 72%);
+  filter: blur(32px);
+  pointer-events: none;
 }
 
 .media-window__frame {
@@ -311,9 +324,11 @@ body.is-loaded .topbar { opacity: 1; transform: none; }
   overflow: hidden;
   isolation: isolate;
   box-shadow:
-    0 30px 80px rgba(0, 0, 0, .55),
-    0 0 0 1px rgba(244, 237, 222, .09),
-    0 0 90px rgba(95, 198, 191, .12);
+    0 30px 70px rgba(0, 0, 0, .4),
+    0 0 60px var(--window-glow);
+  /* dissolve suave só na base — o vídeo emerge da bruma, em vez de ser cortado */
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 87%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 0%, #000 87%, transparent 100%);
 }
 
 .media-window__poster,
@@ -346,18 +361,19 @@ body.is-loaded .topbar { opacity: 1; transform: none; }
   z-index: 2;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(4,16,29,.18) 0%, transparent 22%, transparent 68%, rgba(4,16,29,.42) 100%);
+    linear-gradient(180deg, rgba(4,16,29,.18) 0%, transparent 22%, transparent 56%, rgba(4,16,29,.62) 100%);
 }
 
-/* reflexo d'água sob a janela */
+/* reflexo d'água sob a janela — continua a bruma da base, em vez de ser um bloco à parte */
 .media-window__reflection {
-  height: 74px;
-  margin-top: 6px;
-  border-radius: 22px;
-  background: linear-gradient(180deg, rgba(95,198,191,.16), transparent 80%);
-  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.5), transparent);
-          mask-image: linear-gradient(180deg, rgba(0,0,0,.5), transparent);
-  filter: blur(6px);
+  position: relative;
+  z-index: -1;
+  height: 100px;
+  margin-top: -22px;
+  background: radial-gradient(60% 100% at 50% 0%, var(--window-glow), transparent 75%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.6), transparent);
+          mask-image: linear-gradient(180deg, rgba(0,0,0,.6), transparent);
+  filter: blur(11px);
 }
 
 .media-window__caption {
